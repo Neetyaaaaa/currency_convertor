@@ -8,6 +8,7 @@ exchange_rates = {
     'INR': {'USD': 1/83.2, 'INR': 1, 'EUR': 0.011, 'JPY': 1.82},
     'EUR': {'USD': 1.09, 'INR': 90.9, 'EUR': 1, 'JPY': 164.0},
     'JPY': {'USD': 0.0066, 'INR': 0.55, 'EUR': 0.0061, 'JPY': 1}
+    
 }
 
 currencies = list(exchange_rates.keys())
@@ -26,7 +27,7 @@ def convert_currency(event=None):
     except Exception as e:
         messagebox.showerror("Error", f"Conversion failed: {str(e)}")
 
-# GUI setup
+# GUI setup for currency convertor 
 root = tk.Tk()
 root.title("Currency Converter")
 
@@ -46,7 +47,9 @@ to_menu.grid(row=2, column=1)
 
 tk.Button(root, text="Convert", command=convert_currency).grid(row=3, columnspan=2, pady=10)
 
-# Bind Enter key
+
 root.bind("<Return>", convert_currency)
 
+
+# code for running main file in loop
 root.mainloop()
